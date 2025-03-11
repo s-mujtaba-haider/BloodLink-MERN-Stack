@@ -1,75 +1,40 @@
+# BloodLink-MERN-Stack-
+BloodLink is a web-based platform that connects blood donors with recipients in need. The system allows users to register as donors, search for available donors based on blood type and location, and request blood donations. The platform also includes an admin panel for managing donor data, user verification, and monitoring donation activities.. With real-time notifications, location tracking, and a user-friendly interface, BloodLink enhances the efficiency of blood donation processes and ensures timely assistance to those in need.
 
-# SaasAble Free React Material UI, UI-Kit with Dashboard Template
+Key Features:
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/phoenixcoded/saasable-ui/blob/main/LICENSE)
+✅ Dashboard with Navbar and Sidebar – Intuitive navigation for users and admins 
 
-SaasAble is a complete solution for building SaaS products as well as non-SaaS products. Whether you’re creating a user-friendly **front-end** or a powerful **admin dashboard**, SaasAble has all the tools you need. It’s also flexible—perfect not just for SaaS but also for agencies, digital products, CRMs, blogs, AI platforms, project management, learning systems, and more.
+✅ Login/Sign Up System – Secure authentication for donors, recipients, and admins
 
-[![SaasAble Free React UI kit and Dashboard Template](https://ableproadmin.com/adv-banner-saasable/adv-github.png)](https://www.saasable.io/)
+✅ Multi-Device Optimization – Fully responsive design for all devices
 
-## Free Vs Premium
+✅ Google Maps Integration – Location of Donors
 
-| [SaasAble Free](https://free.saasable.io/)     | [SaasAble Pro](https://www.saasable.io/)                                         |
-| ---------------------------------------------- | :------------------------------------------------------------------------------- |
-| **1** Demo Landing                             | **7+** Demo Landing                                                              |
-| **25** Component Blocks                        | **193+** Component blocks                                                        |
-| -                                              | ✓ Dark/Light Mode 🌓                                                            |
-| -                                              | ✓ TypeScript version                                                             |
-| -                                              | ✓ Design files (Figma)                                                           |
-| -                                              | ✓ Multiple color options                                                         |
-| -                                              | ✓ RTL                                                                            |
-| -                                              | ✓ Supabase authentication                                                         |
-| -                                              | ✓ [More components](https://saasable.io/sections)                                |
-| ✓ MIT License                                  | ✓ [Pro License](https://mui.com/store/license/)                                  |
+✅ User Profiles – Donors and recipients can manage their personal details
 
+✅ Blood Donation Requests – Users can request and approve blood donations
 
-## Table of contents
+✅ Search Functionality – Find donors based on blood type, location, and availability
 
-- [Getting started](#getting-started)
-- [Technology stack](#technology-stack)
-- [Author](#author)
-- [Issues?](#issues)
-- [License](#license)
+✅ Notifications & Alerts – SMS/Email alerts for requests, approvals, and reminders
 
-## Getting Started
+✅ Social Media Integration – Share donation requests on social media platforms
 
-1. Clone from Github
+✅ Certificate Generation (PDF) – Generate donor appreciation certificates
 
-```
-git clone https://github.com/phoenixcoded/saasable-ui.git
-```
+✅ Error Handling – Proper validation and error messages for smooth user experience
 
-2. Goto `uikit` directory and Install packages
+✅ Admin Panel with Analytics Dashboard – Track total donations, active donors, and statistics
 
-```
-npm install
-```
+✅ Security & Data Protection – Secure encryption and verification of user data
 
-3. Run project
+✅ User-Friendly Design (UI/UX) – Clean, simple, and intuitive interface
 
-```
-npm run dev
-```
+✅ Blogs & Awareness Section – Informative articles on blood donation benefits
 
+✅ Third-Party Service Integration – Email Service, for SMS if get free API from twilio will use, otherwise whatsap icon or number
 
-## Technology stack
+✅Donation History
 
-- [Material UI V6](https://mui.com/core/)
-- Next.js
-
-## Author
-
-SaasAble is managed by the team Phoenixcoded
-
-## Support
-
-https://support.phoenixcoded.net/
-
-## Issues
-
-Please generate a [GitHub issue](https://github.com/phoenixcoded/saasable-ui/issues) if you found a bug in any version. We will try our best to resolve the issue.
-
-## License
-
-- MIT
+✅Donor Eligibility Check (Form Based)
