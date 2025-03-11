@@ -1,15 +1,17 @@
-const express = require('express');
-const { createRequest, getRequests, updateRequest, deleteRequest } = require('../controllers/requestController');
-const {protect} = require('../config/authMiddleware');
+const express = require("express");
+const { createRequest, getRequests, updateRequest, deleteRequest } = require("../controllers/requestController");
+const { protect, authorize } = require("../config/authMiddleware");
 
 const router = express.Router();
 
-router.post('/', protect, createRequest);
+// Only recipients can create a blood request
+router.post("/", protect, authorize("recipient"), createRequest);
 
-router.get('/', protect, getRequests);
+// Admins and recipients can view requests
+router.get("/", protect, authorize("admin", "recipient"), getRequests);
 
-router.put('/:id', protect, updateRequest);
-
-router.delete('/:id', protect, deleteRequest);
+// Only recipients can update or delete their requests
+router.put("/:id", protect, authorize("recipient"), updateRequest);
+router.delete("/:id", protect, authorize("recipient"), deleteRequest);
 
 module.exports = router;

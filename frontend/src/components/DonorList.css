@@ -1,0 +1,65 @@
+.donor-list-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.donor-list {
+    list-style: none;
+    padding: 0;
+}
+
+.donor-card {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.donor-card:hover {
+    transform: translateY(-3px);
+}
+
+.donor-card strong {
+    display: block;
+    font-size: 18px;
+    color: var(--accent-color);
+}
+
+.donor-card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.donor-card span {
+    font-weight: bold;
+    color: #333;
+}
+
+.no-donors {
+    font-size: 18px;
+    color: #777;
+    margin-top: 20px;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 18px;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 20px;
+}

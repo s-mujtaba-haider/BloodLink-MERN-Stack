@@ -1,13 +1,11 @@
-const express = require('express');
-const { sendNotificationEmail, notifyDonors } = require('../controllers/notificationController');
-const {protect} = require('../config/authMiddleware');
+const express = require("express");
+const { sendNotificationEmail, notifyDonors } = require("../controllers/notificationController");
+const { protect, authorize } = require("../config/authMiddleware");
 
 const router = express.Router();
 
-// Send a custom email notification
-router.post('/email', protect, sendNotificationEmail);
-
-// Notify donors about a new blood request
-router.post('/notify-donors', protect, notifyDonors);
+// Only admins can send notifications
+router.post("/email", protect, authorize("admin"), sendNotificationEmail);
+router.post("/notify-donors", protect, authorize("admin"), notifyDonors);
 
 module.exports = router;
