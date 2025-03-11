@@ -3,7 +3,8 @@ BloodLink is a web-based platform that connects blood donors with recipients in 
 
 Key Features:
 
-✅ Dashboard with Navbar and Sidebar – Intuitive navigation for users and admins
+✅ Dashboard with Navbar and Sidebar – Intuitive navigation for users and admins 
+
 ✅ Login/Sign Up System – Secure authentication for donors, recipients, and admins
 ✅ Multi-Device Optimization – Fully responsive design for all devices
 ✅ Google Maps Integration – Location of Donors
