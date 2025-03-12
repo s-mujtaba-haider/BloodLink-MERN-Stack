@@ -1,71 +1,99 @@
-/* Centering the profile container with smooth shadow */
+/* Profile Container */
 .profile-container {
-    max-width: 450px;
-    margin: 60px auto;
-    padding: 25px;
-    background: #ffffff;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Arial", sans-serif;
 }
 
-.profile-container:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Profile Title */
+/* Title Styling */
 .profile-title {
+    text-align: center;
     font-size: 26px;
-    font-weight: bold;
-    color: var(--accent-color);
-    margin-bottom: 18px;
+    color: #2C3E50;
+    margin-bottom: 20px;
 }
 
-/* Profile Card */
-.profile-card {
-    background: #fdfdfd;
+/* Grid Layout for Profile Boxes */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Profile Box Styling */
+.profile-box {
+    background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    text-align: left;
-    box-shadow: 0px 3px 8px rgba(18, 166, 229, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Info */
-.profile-card p {
-    font-size: 17px;
-    margin: 12px 0;
-    color: #444;
-    line-height: 1.4;
+.profile-box h3 {
+    color: #2C3E50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-.profile-card strong {
-    color: var(--accent-color);
+/* Donation History Styling */
+.donation-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donation-item {
+    background: #eef9f3;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.donation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.donation-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.submit-button {
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    background: #45A049;
 }
 
 /* Loading Text */
 .loading-text {
-    font-size: 17px;
-    color: #777;
-    font-style: italic;
-}
-
-/* Update Button */
-.update-button {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--accent-color);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.update-button:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.05);
+    text-align: center;
+    font-size: 18px;
+    color: #888;
 }

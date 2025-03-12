@@ -1,14 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
-import { AuthContext } from "../AuthContext"; // Import AuthContext
+import { AuthContext } from "../context/AuthContext"; // Import AuthContext
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const { isLoggedIn, logout } = useContext(AuthContext);
+    const { isLoggedIn, isAdmin, userRole, logout } = useContext(AuthContext);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleLogout = () => {
-        logout(); // Call logout from context
+        logout();
         navigate("/");
     };
 
@@ -46,15 +46,30 @@ const Navbar = () => {
                     {/* Navigation Menu */}
                     <nav id="navmenu" className={`navmenu ${menuOpen ? "open" : ""}`}>
                         <ul>
-                            {isLoggedIn ? (
+                            {isAdmin && isLoggedIn ? (
+                                <>
+                                    <li><Link to="/admin">Admin Dashboard</Link></li>
+                                    <li><Link to="/notifications">Notifications</Link></li>
+                                    <li><Link to="/profile">Profile</Link></li>
+                                    <li><button onClick={handleLogout} className="logout-button">Logout</button></li>
+                                </>
+                            ) : isLoggedIn ? (
                                 <>
                                     <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/aboutus">About Us</Link></li>
+                                    <li><Link to="/notifications">Notifications</Link></li>
                                     <li><Link to="/dashboard">Dashboard</Link></li>
                                     <li><Link to="/donors">Donors</Link></li>
                                     <li><Link to="/requests">Requests</Link></li>
-                                    <li><Link to="/notifications">Notifications</Link></li>
                                     <li><Link to="/profile">Profile</Link></li>
+                                    <li><Link to="/blood-request" className="request-blood-btn">Request Blood</Link></li>
+
+                                    {/* Only show the button if the user is a recipient */}
+                                    {userRole === "recipient" && (
+                                        <li>
+                                            <Link to="/blood-request" className="request-blood-btn">Request Blood</Link>
+                                        </li>
+                                    )}
+
                                     <li><button onClick={handleLogout} className="logout-button">Logout</button></li>
                                 </>
                             ) : (
@@ -79,4 +94,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

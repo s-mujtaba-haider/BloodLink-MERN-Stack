@@ -39,7 +39,7 @@ const Login = () => {
                     />
                     <button type="submit">Login</button>
                 </form>
-                {message && <p className="message">{message}</p>}
+                {message && <p className="message" style={{color : "red"}}>{message}</p>}
             </div>
         </div>
     );

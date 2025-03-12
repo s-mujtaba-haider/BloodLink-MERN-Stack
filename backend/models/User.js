@@ -31,6 +31,13 @@ const userSchema = new mongoose.Schema({
         type: Boolean, 
         default: true 
     },
+    donations: [
+        {
+            date: { type: Date, default: Date.now },
+            recipient: String,
+            hospital: String
+        }
+    ]
 }, {
     timestamps: true
 });

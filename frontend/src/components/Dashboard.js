@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getUserProfile, getDonors, getRequests } from "../services/api";
 import { Link } from "react-router-dom";
-import "./Dashboard.css"; // Import the CSS file
+import { FaTint, FaUser, FaBell, FaHeartbeat, FaPlusCircle } from "react-icons/fa";
+import "./Dashboard.css";
 
 const Dashboard = () => {
     const [user, setUser] = useState(null);
@@ -34,8 +35,29 @@ const Dashboard = () => {
         <div className="dashboard-container">
             {/* Header */}
             <div className="dashboard-header">
-                <h1>Dashboard</h1>
-                {user && <h2>Welcome, {user.name}!</h2>}
+                <h1 style={{color: "white"}}>Dashboard</h1>
+                {user && <h2 style={{color: "white"}}>Welcome, {user.name}!</h2>}
+            </div>
+
+            {/* Statistics Section */}
+            <div className="stats-container">
+                <div className="stat-box">
+                    <FaTint className="stat-icon red" />
+                    <h3>{donors.length}</h3>
+                    <p>Recent Donors</p>
+                </div>
+                {user?.role === "admin" && (
+                    <div className="stat-box">
+                        <FaHeartbeat className="stat-icon blue" />
+                        <h3>{requests.length}</h3>
+                        <p>Recent Requests</p>
+                    </div>
+                )}
+                <div className="stat-box">
+                    <FaUser className="stat-icon green" />
+                    <h3>{user?.role || "User"}</h3>
+                    <p>Your Role</p>
+                </div>
             </div>
 
             {/* Profile Section */}
@@ -47,7 +69,7 @@ const Dashboard = () => {
                 </div>
             )}
 
-            {/* Recent Donors - Visible to All */}
+            {/* Recent Donors */}
             <div className="section">
                 <h2>Recent Donors</h2>
                 <ul className="list">
@@ -61,7 +83,7 @@ const Dashboard = () => {
                         <p>No donors available</p>
                     )}
                 </ul>
-                <Link to="/donors">View All Donors</Link>
+                <Link to="/donors" className="view-all">View All Donors</Link>
             </div>
 
             {/* Recent Blood Requests - Only for Admins */}
@@ -79,18 +101,18 @@ const Dashboard = () => {
                             <p>No active blood requests</p>
                         )}
                     </ul>
-                    <Link to="/requests">View All Requests</Link>
+                    <Link to="/requests" className="view-all">View All Requests</Link>
                 </div>
             )}
 
-            {/* Actions - Only Admins Can Send Notifications */}
+            {/* Action Buttons */}
             <div className="action-buttons">
                 <Link to="/blood-request">
-                    <button>Request Blood</button>
+                    <button className="action-btn"><FaPlusCircle /> Request Blood</button>
                 </Link>
                 {user?.role === "admin" && (
                     <Link to="/notifications">
-                        <button>Send Notification</button>
+                        <button className="action-btn"><FaBell /> Send Notification</button>
                     </Link>
                 )}
             </div>

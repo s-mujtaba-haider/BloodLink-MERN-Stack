@@ -43,3 +43,17 @@ export const deleteRequest = async (id) => api.delete(`/requests/${id}`);
 // Notifications APIs
 export const sendNotificationEmail = async (emailData) => api.post("/notifications/email", emailData);
 export const notifyDonors = async (notificationData) => api.post("/notifications/notify-donors", notificationData);
+
+// Fetch logged-in donor's donation history (Donor only)
+export const getDonationHistory = async () => api.get("/users/donation-history");
+
+// Fetch all donations (Admin only)
+export const getAllDonations = async () => api.get("/users/all-donations");
+
+// Add a new donation (Donor only)
+export const addDonation = async (donationData) => {
+    const response = await api.post("/users/donate", donationData);
+    
+    // Ensure response includes necessary certificate details
+    return response.data; // This will include donorName, bloodType, unitsDonated, and date
+};

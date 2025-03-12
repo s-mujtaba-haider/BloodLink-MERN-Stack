@@ -1,0 +1,89 @@
+/* Wrapper to center everything */
+.certificate-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Certificate Container */
+.certificate-container {
+    width: 900px;
+    height: 600px;
+    padding: 50px;
+    text-align: center;
+    border: 10px solid gold;
+    background: linear-gradient(to bottom, #ffffff, #f8f1e5);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    font-family: "Playfair Display", serif;
+    position: relative;
+}
+
+/* Title */
+.certificate-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #b8860b; /* Golden Color */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Subtitle */
+.certificate-subtitle {
+    font-size: 22px;
+    color: #34495E;
+    font-style: italic;
+}
+
+/* Donor's Name */
+.certificate-name {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: "Lobster", cursive;
+    color: #e74c3c; /* Deep Red */
+    margin: 15px 0;
+}
+
+/* General text */
+.certificate-text {
+    font-size: 20px;
+    color: #2C3E50;
+    margin: 10px 0;
+}
+
+/* Details Section */
+.certificate-details {
+    font-size: 20px;
+    color: #16A085;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+/* Footer */
+.certificate-footer {
+    font-size: 22px;
+    font-style: italic;
+    color: #2C3E50;
+    margin-top: 40px;
+}
+
+
+/* Download button styling */
+.download-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:hover {
+    background: #45A049;
+}
